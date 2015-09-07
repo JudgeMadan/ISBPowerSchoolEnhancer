@@ -20,6 +20,6 @@
 	"name": "ISB PowerSchool Enhancer",
 	"permissions": ["https://powerschool.isb.ac.th/*", "http://powerschool.isb.ac.th/*"],
 	"short_name": "ISBPWRSKLENH",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"web_accessible_resources": ["src/schedule/schedule.css"]
 }
