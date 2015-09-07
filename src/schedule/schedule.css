@@ -1,0 +1,451 @@
+/*
+
+This style sheet is used to format a student's schedule for the week or matrix
+views.
+
+*/
+.gridSched {
+    border-collapse: collapse;
+    background-image: url("table-back-stripes.png");
+}
+
+.gridSched th,
+td.scheduleHeader {
+    text-align: center;
+    border: 1px solid #999;
+    background-color: #98B9D5;
+}
+
+.gridSched td {
+    border: 1px solid #999;
+}
+
+.gridSched td:last-child {
+    border: none;
+    background-color: #FFF;
+}
+.gridSched td.scheduleBreak {
+    background-color: transparent;
+}
+.gridSched td:first-line{
+    font-weight: bold;
+}
+td.scheduleTickOdd,
+td.scheduleTickEven {
+	text-align: right;
+	white-space: nowrap;
+    font-weight: bold;
+    background-color: #FFF;
+}
+
+td.scheduleTickEven {
+    background-color: #D7EBF4;
+}
+
+td.scheduleBreak {
+	background-color: #999999;
+}
+td.scheduleBreakTick {
+	background-color: #999999;
+}
+
+td.scheduleOffTime {
+	background-color: #CCC;
+}
+td.scheduleOffTimeTick {
+	background-color: #CCC;
+}
+
+
+td.scheduleFooter {
+display: none;
+}
+
+
+td.scheduleClass1 {
+	background-color: #F9CEBB;
+
+}
+td.scheduleClass1Tick {
+	background-color: #F9CEBB;
+
+}
+
+td.scheduleClass2 {
+	background-color: #FCE6C4;
+
+}
+td.scheduleClass2Tick {
+	background-color: #FCE6C4;
+}
+
+td.scheduleClass3 {
+	background-color: #FFFCCE;
+
+}
+td.scheduleClass3Tick {
+	background-color: #FFFCCE;
+}
+
+td.scheduleClass4 {
+	background-color: #E3F0CE;
+}
+td.scheduleClass4Tick {
+	background-color: #E3F0CE;
+}
+
+td.scheduleClass5 {
+	background-color: #C3E4CE;
+}
+td.scheduleClass5Tick {
+	background-color: #C3E4CE;
+}
+
+td.scheduleClass6 {
+	background-color: #C6E7F9;
+}
+td.scheduleClass6Tick {
+	background-color: #C6E7F9;
+}
+
+td.scheduleClass7 {
+	background-color: #CACAE2;
+}
+td.scheduleClass7Tick {
+	background-color: #CACAE2;
+}
+
+td.scheduleClass8 {
+	background-color: #D7C3DB;
+}
+td.scheduleClass8Tick {
+	background-color: #D7C3DB;
+}
+
+td.scheduleClass9 {
+	background-color: #FACFDD;
+}
+td.scheduleClass9Tick {
+	background-color: #FACFDD;
+}
+
+td.scheduleClass10 {
+	background-color: #E5DCCE;
+}
+td.scheduleClass10Tick {
+	background-color: #E5DCCE;
+}
+
+td.scheduleClass11 {
+	background-color: #E3D1B6;
+}
+td.scheduleClass11Tick {
+	background-color: #E3D1B6;
+}
+
+td.scheduleClass12 {
+	background-color: #F39D77;
+}
+td.scheduleClass12Tick {
+	background-color: #F39D77;
+}
+
+td.scheduleClass13 {
+	background-color: #FACD8A;
+}
+td.scheduleClass13Tick {
+	background-color: #FACD8A;
+}
+
+td.scheduleClass14 {
+	background-color: #FFF99D;
+}
+td.scheduleClass14Tick {
+	background-color: #FFF99D;
+}
+
+td.scheduleClass15 {
+	background-color: #C8E19D;
+}
+td.scheduleClass15Tick {
+	background-color: #C8E19D;
+}
+
+td.scheduleClass16 {
+	background-color: #88C99D;
+}
+td.scheduleClass16Tick {
+	background-color: #88C99D;
+}
+
+td.scheduleClass17 {
+	background-color: #8DCFF4;
+}
+td.scheduleClass17Tick {
+	background-color: #8DCFF4;
+}
+
+td.scheduleClass18 {
+	background-color: #9595C6;
+}
+td.scheduleClass18Tick {
+	background-color: #9595C6;
+}
+
+td.scheduleClass19 {
+	background-color: #AF88B8;
+}
+td.scheduleClass19Tick {
+	background-color: #AF88B8;
+}
+
+td.scheduleClass20 {
+	background-color: #F59FBC;
+}
+td.scheduleClass20Tick {
+	background-color: #F59FBC;
+}
+
+td.scheduleClass21 {
+	background-color: #CBB99D;
+}
+td.scheduleClass21Tick {
+	background-color: #CBB99D;
+}
+
+td.scheduleClass22 {
+	background-color: #C8A46D;
+}
+td.scheduleClass22Tick {
+	background-color: #C8A46D;
+}
+
+td.scheduleClass23 {
+	background-color: #EA6B48;
+}
+td.scheduleClass23Tick {
+	background-color: #EA6B48;
+}
+
+td.scheduleClass24 {
+	background-color: #F4B757;
+}
+td.scheduleClass24Tick {
+	background-color: #F4B757;
+}
+
+td.scheduleClass25 {
+	background-color: #FEF668;
+}
+td.scheduleClass25Tick {
+	background-color: #FEF668;
+}
+
+td.scheduleClass26 {
+	background-color: #ABD46E;
+}
+td.scheduleClass26Tick {
+	background-color: #ABD46E;
+}
+
+td.scheduleClass27 {
+	background-color: #31B573;
+}
+td.scheduleClass27Tick {
+	background-color: #31B573;
+}
+
+td.scheduleClass28 {
+	background-color: #3FBCEF;
+}
+td.scheduleClass28Tick {
+	background-color: #3FBCEF;
+}
+
+td.scheduleClass29 {
+	background-color: #676EB0;
+}
+td.scheduleClass29Tick {
+	background-color: #676EB0;
+}
+
+td.scheduleClass30 {
+	background-color: #8E569B;
+}
+td.scheduleClass30Tick {
+	background-color: #8E569B;
+}
+
+td.scheduleClass31 {
+	background-color: #ED6C9E;
+}
+td.scheduleClass31Tick {
+	background-color: #ED6C9E;
+}
+
+td.scheduleClass32 {
+	background-color: #9E8B75;
+}
+td.scheduleClass32Tick {
+	background-color: #9E8B75;
+}
+
+td.scheduleClass33 {
+	background-color: #A9834F;
+}
+td.scheduleClass33Tick {
+	background-color: #A9834F;
+}
+
+td.scheduleClass34 {
+	background-color: #DF0024;
+}
+td.scheduleClass34Tick {
+	background-color: #DF0024;
+}
+
+td.scheduleClass35 {
+	background-color: #EF9C00;
+}
+td.scheduleClass35Tick {
+	background-color: #EF9C00;
+}
+
+td.scheduleClass36 {
+	background-color: #F8F400;
+}
+td.scheduleClass36Tick {
+    background-color: #F8F400;
+}
+td.scheduleClass37 {
+    background-color: #7CC623;
+}
+td.scheduleClass37Tick {
+	background-color: #7CC623;
+}
+
+td.scheduleClass38 {
+	background-color: #009F3C;
+}
+td.scheduleClass38Tick {
+	background-color: #009F3C;
+}
+
+td.scheduleClass39 {
+	background-color: #00A8EC;
+}
+td.scheduleClass39Tick {
+	background-color: #00A8EC;
+}
+
+td.scheduleClass40 {
+	background-color: #314396;
+}
+td.scheduleClass40Tick {
+	background-color: #314396;
+}
+
+td.scheduleClass41 {
+	background-color: #67087B;
+}
+td.scheduleClass41Tick {
+	background-color: #67087B;
+}
+
+td.scheduleClass42 {
+	background-color: #E3007B;
+}
+td.scheduleClass42Tick {
+	background-color: #E3007B;
+}
+
+td.scheduleClass43 {
+	background-color: #766454;
+}
+td.scheduleClass43Tick {
+	background-color: #766454;
+}
+
+td.scheduleClass44 {
+	background-color: #8C6635;
+}
+td.scheduleClass44Tick {
+	background-color: #8C6635;
+}
+
+td.scheduleClass45 {
+	background-color: #960014;
+}
+td.scheduleClass45Tick {
+	background-color: #960014;
+}
+
+td.scheduleClass46 {
+	background-color: #A06700;
+}
+td.scheduleClass46Tick {
+	background-color: #A06700;
+}
+
+td.scheduleClass47 {
+	background-color: #A7A400;
+}
+td.scheduleClass47Tick {
+	background-color: #A7A400;
+}
+
+td.scheduleClass48 {
+	background-color: #518412;
+}
+td.scheduleClass48Tick {
+	background-color: #518412;
+}
+
+td.scheduleClass49 {
+	background-color: #006A25;
+}
+td.scheduleClass49Tick {
+	background-color: #006A25;
+}
+
+td.scheduleClass50 {
+	background-color: #00709E;
+}
+td.scheduleClass50Tick {
+	background-color: #00709E;
+}
+
+td.scheduleClass51 {
+	background-color: #1D2A63;
+}
+td.scheduleClass51Tick {
+	background-color: #1D2A63;
+}
+
+td.scheduleClass52 {
+	background-color: #440351;
+}
+td.scheduleClass52Tick {
+	background-color: #440351;
+}
+
+td.scheduleClass53 {
+	background-color: #990050;
+}
+td.scheduleClass53Tick {
+	background-color: #990050;
+}
+
+td.scheduleClass54 {
+	background-color: #52443C;
+}
+td.scheduleClass54Tick {
+	background-color: #52443C;
+}
+
+td.scheduleClass55 {
+	background-color: #724C21;
+}
+td.scheduleClass55Tick {
+    background-color: #724C21;
+}
