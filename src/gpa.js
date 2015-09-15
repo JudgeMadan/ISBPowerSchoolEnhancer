@@ -51,7 +51,34 @@ for ( i = 0; i < className.length; i++) {
 }
 
 //GPA CALC
+//Use switch statement for legibility
 function calcGP(grade) {
+	switch (grade) {
+    		case "A+":GP = GP + 4.3;
+        		break;
+    		case "A":GP += 4;
+        		break;
+    		case "A-":
+        		GP = GP + 3.7;
+        		break;
+    		case "B+":
+        		GP = GP + 3.3;
+        		break;
+    		case "B":
+        		GP = GP + 3;
+        		break;
+    		case "B-":
+        		GP = GP + 2.7;
+        		break;
+    		case "C+":
+        		GP = GP + 2.3;
+        		break;
+        	case "C":
+        		break;
+        	case "C-":
+        	
+	}
+}
 	if (grade == "A+") {
 		GP = GP + 4.3;
 	} else if (grade == "A") {
@@ -79,6 +106,7 @@ function calcGP(grade) {
 	} else {
 	}
 }
+
 
 for ( i = 0; i < letterGrades.length; i++) {
 	calcGP(letterGrades[i]);
