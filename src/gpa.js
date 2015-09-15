@@ -51,34 +51,38 @@ for ( i = 0; i < className.length; i++) {
 }
 
 //GPA CALC
+//Use switch statement for legibility
 function calcGP(grade) {
-	if (grade == "A+") {
-		GP = GP + 4.3;
-	} else if (grade == "A") {
-		GP = GP + 4;
-	} else if (grade == "A-") {
-		GP = GP + 3.7;
-	} else if (grade == "B+") {
-		GP = GP + 3.3;
-	} else if (grade == "B") {
-		GP = GP + 3;
-	} else if (grade == "B-") {
-		GP = GP + 2.7;
-	} else if (grade == "C+") {
-		GP = GP + 2.3;
-	} else if (grade == "C") {
-		GP = GP + 2;
-	} else if (grade == "C-") {
-		GP = GP + 1.7;
-	} else if (grade == "D+") {
-		GP = GP + 1.3;
-	} else if (grade == "D") {
-		GP = GP + 1;
-	} else if (grade == "D-") {
-		GP = GP + 0.7;
-	} else {
+	switch (grade) {
+    		case "A+":GP += 4.3;
+        		break;
+    		case "A":GP += 4;
+        		break;
+    		case "A-":GP += 3.7;
+        		break;
+    		case "B+":GP += 3.3;
+        		break;
+    		case "B":GP += 3;
+        		break;
+    		case "B-":GP += 2.7;
+        		break;
+    		case "C+":GP += 2.3;
+        		break;
+        	case "C":GP += 2;
+        		break;
+        	case "C-":GP += 1.7;
+        		break;
+        	case "D+":GP += 1.3;
+        		break;
+        	case "D":GP += 1;
+        		break;
+        	case "D-":GP += 0.7;
+        		break;
+        	default: break;
+        	
 	}
 }
+
 
 for ( i = 0; i < letterGrades.length; i++) {
 	calcGP(letterGrades[i]);
