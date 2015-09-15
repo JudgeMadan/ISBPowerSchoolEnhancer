@@ -78,6 +78,7 @@ function calcGP(grade) {
         		break;
         	case "D-":GP += 0.7;
         		break;
+        	default: break;
         	
 	}
 }
