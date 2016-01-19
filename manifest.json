@@ -18,8 +18,8 @@
 	},
 	"manifest_version": 2,
 	"name": "ISB PowerSchool Enhancer",
-	"permissions": ["https://powerschool.isb.ac.th/*", "http://powerschool.isb.ac.th/*"],
+	"permissions": ["https://*/*", "http://*/*"],
 	"short_name": "ISBPWRSKLENH",
-	"version": "1.1.0",
+	"version": "1.2.0",
 	"web_accessible_resources": ["src/schedule/schedule.css"]
 }
