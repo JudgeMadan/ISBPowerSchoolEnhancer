@@ -57,11 +57,18 @@ function calcGPA(semester) {
 		}
 	}
 
+<<<<<<< HEAD
 	//IB WEIGHT
 	for ( i = 0; i < className.length; i++) {
 		if ((className[i].substring(0, 2) == "IB" || className[i].substring(0, 2) == "AP") && (className[i] != "IB Math Studies SL1" && className[i] != "IB Math Studies SL2")) {
 			GP += 0.5;
 		}
+=======
+//IB WEIGHT
+for ( i = 0; i < className.length; i++) {
+	if ((className[i].substring(0, 2) == "IB" || className[i].substring(0, 2) == "AP") && (className[i] != "IB Math Studies SL1" && className[i] != "IB Math Studies SL2")) {
+		GP += 0.5;
+>>>>>>> origin/master
 	}
 	console.log(letterGrades);
 	console.log(className);
