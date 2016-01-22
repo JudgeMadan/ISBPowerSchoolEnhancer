@@ -69,45 +69,31 @@ function calcGPA(semester) {
 	//Use switch statement for legibility
 	function calcGP(grade) {
 		switch (grade) {
-		case "A+":
-			GP += 4.3;
-			break;
-		case "A":
-			GP += 4;
-			break;
-		case "A-":
-			GP += 3.7;
-			break;
-		case "B+":
-			GP += 3.3;
-			break;
-		case "B":
-			GP += 3;
-			break;
-		case "B-":
-			GP += 2.7;
-			break;
-		case "C+":
-			GP += 2.3;
-			break;
-		case "C":
-			GP += 2;
-			break;
-		case "C-":
-			GP += 1.7;
-			break;
-		case "D+":
-			GP += 1.3;
-			break;
-		case "D":
-			GP += 1;
-			break;
-		case "D-":
-			GP += 0.7;
-			break;
-		default:
-			break;
-
+    			case "A+":GP += 4.3;
+        			break;
+    			case "A":GP += 4;
+		  		break;
+    			case "A-":GP += 3.7;
+        			break;
+    			case "B+":GP += 3.3;
+        			break;
+	    		case "B":GP += 3;
+        			break;
+    			case "B-":GP += 2.7;
+        			break;
+    			case "C+":GP += 2.3;
+        			break;
+        		case "C":GP += 2;
+        			break;
+		 	case "C-":GP += 1.7;
+        			break;
+        		case "D+":GP += 1.3;
+        			break;
+        		case "D":GP += 1;
+        			break;
+        		case "D-":GP += 0.7;
+        			break;
+        		default: break;
 		}
 	}
 
