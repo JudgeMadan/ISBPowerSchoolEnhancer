@@ -12,7 +12,7 @@ function calcGPA(semester) {
 
 	if (semester == "S1") {
 		//initial parsing to find s1 grades
-		classData = classData.match(/notInSession.*\n.*<td align="left">.*<br>/g);
+		classData = classData.match(/<td class="notInSession">&nbsp;<\/td><td class.*notInSession.*\n.*<td align="left">.*<br>/g);
 		for ( i = 0; i < classData.length; i++) {
 			classData[i] = classData[i].match(/"left">.*<br>/g)[0];
 		}
@@ -23,20 +23,23 @@ function calcGPA(semester) {
 		alert("ERROR!");
 	}
 
+
 	for ( i = 0; i < classData.length; i++) {
 		classData[i] = classData[i].slice(7)
 	}
 	/*
 	*
+	* 
 	* GRADES
 	*/
 
+	
 	//get array of regex matches
 
 	var gradeDataString = "scores\.html.*" + semester + ".*<\/a>";
 	var gradeDataMatch = new RegExp(gradeDataString, 'g');
 	gradeData = gradeData.match(gradeDataMatch);
-
+	console.log(gradeData);
 	//formatting regex matches to grab grades
 	for ( i = 0; i < gradeData.length; i++) {
 
@@ -122,3 +125,5 @@ else if(semester == "S2"){
 else{
 	alert("ERROR! INVALID SEMESTER");
 }
+
+
