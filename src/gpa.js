@@ -119,7 +119,7 @@ else if(semester == "S2"){
 	var S1GPA = calcGPA("S1");
 	var averageGPA = (S1GPA + S2GPA)/2;
 	
-	change.innerHTML = "<p style='font-family:HelveticaNeue-Light, Helvetica Neue, Helvetica;font-size: 16px;text-align:center;line-height:20px;'>(S1+S2) GPA: " + parseFloat(averageGPA).toFixed(3) + "&nbsp;&nbsp;  (S1) GPA: " + parseFloat(S1GPA).toFixed(3) +  "</p><p style='font-family:HelveticaNeue-Light, Helvetica Neue, Helvetica;font-size: 20px;text-align:center;'>(S2) GPA: " + parseFloat(S2GPA).toFixed(3) + "</p>";
+	change.innerHTML = "<p style='font-family:HelveticaNeue-Light, Helvetica Neue, Helvetica;font-size: 20px;text-align:center;'>(S2) GPA: " + parseFloat(S2GPA).toFixed(3) + "</p><p style='font-family:HelveticaNeue-Light, Helvetica Neue, Helvetica;font-size: 16px;text-align:center;line-height:20px;'>(S1) GPA: " + parseFloat(S1GPA).toFixed(3) + "&nbsp;&nbsp;  (S1+S2) GPA: " + parseFloat(averageGPA).toFixed(3) +  "</p>";
 
 }
 else{
