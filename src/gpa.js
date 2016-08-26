@@ -1,129 +1,73 @@
-var change = document.getElementsByTagName("tbody")[2];
-var semester = "S2";
-
-function calcGPA(semester) {
-	//run-specific vars
-	var gradeData = document.getElementsByTagName("tbody")[1].innerHTML;
-	var classData = document.getElementsByTagName("tbody")[1].innerHTML;
-	var letterGrades = [];
-	var className = [];
-	var GP = 0;
-	var GPA;
-
-	if (semester == "S1") {
-		//initial parsing to find s1 grades
-		classData = classData.match(/<td class="notInSession">&nbsp;<\/td><td class.*notInSession.*\n.*<td align="left">.*<br>/g);
-		for ( i = 0; i < classData.length; i++) {
-			classData[i] = classData[i].match(/"left">.*<br>/g)[0];
-		}
-	} else if (semester == "S2") {
-		classData = classData.match(/"left">.*<br>/g);
-
-	} else {
-		alert("ERROR!");
+class calcGPA {
+	//this is not a 'proper' class, need to fix on later versions. Need to get this out as soon as possible due to the PS update.
+	constructor(semester, tbodynum){
+		this.semester = semester;
+		this.tbody = document.getElementsByTagName("tbody")[tbodynum].innerHTML.match(/<td align="left">.*<br>.*\n.*S1.*<\/td>/g);
+		this.grades= [];
+		this.cName = [];
+		this.gpa = 0;
 	}
-
-
-	for ( i = 0; i < classData.length; i++) {
-		classData[i] = classData[i].slice(7)
-	}
-	/*
-	*
-	* 
-	* GRADES
-	*/
-
-	
-	//get array of regex matches
-
-	var gradeDataString = "scores\.html.*" + semester + ".*<\/a>";
-	var gradeDataMatch = new RegExp(gradeDataString, 'g');
-	gradeData = gradeData.match(gradeDataMatch);
-	console.log(gradeData);
-	//formatting regex matches to grab grades
-	for ( i = 0; i < gradeData.length; i++) {
-
-		//isolate grades
-		gradeData[i] = gradeData[i].slice(0, -4);
-		gradeData[i] = gradeData[i].substring(gradeData[i].indexOf(">") + 1, gradeData[i].length);
-		//recheck grades and isolate letters
-		gradeData[i] = gradeData[i].match(/[ABCDF][+-]?/g);
-	}
-	/*
-	 * PROCESSING
-	 */
-	for ( i = 0; i < gradeData.length; i++) {
-		//if grades exist then push class and grades into array.
-		if (gradeData[i]) {
-			letterGrades.push(gradeData[i][0]);
-			className.push(classData[i])
+	getGrades(){
+		//finds grades and makes sure they exist. If they don't then the index is null.
+		for(var i=0; i < this.tbody.length; i++){
+			this.grades[i] = this.tbody[i].match(/S1">.*<\/a>/g)[0].substring(4,6).match(/[ABCDEF][+-]?/g);
+			//if they exist, properly format them.
+			if(this.grades[i]){
+				this.grades[i] = this.grades[i][0]
+			}
 		}
 	}
-
-	//IB WEIGHT
-	for ( i = 0; i < className.length; i++) {
-		if ((className[i].substring(0, 2) == "IB" || className[i].substring(0, 2) == "AP") && (className[i] != "IB Math Studies SL1" && className[i] != "IB Math Studies SL2")) {
-			GP += 0.5;
+	getClassName(){
+		for(var i=0; i < this.tbody.length; i++){
+			this.cName[i] = this.tbody[i].match(/left">.{0,100}&nbsp;/g)[0].substring(6);
 		}
 	}
-	console.log(letterGrades);
-	console.log(className);
-	//GPA CALC
-	//Use switch statement for legibility
-	function calcGP(grade) {
-		switch (grade) {
-    			case "A+":GP += 4.3;
-        			break;
-    			case "A":GP += 4;
-		  		break;
-    			case "A-":GP += 3.7;
-        			break;
-    			case "B+":GP += 3.3;
-        			break;
-	    		case "B":GP += 3;
-        			break;
-    			case "B-":GP += 2.7;
-        			break;
-    			case "C+":GP += 2.3;
-        			break;
-        		case "C":GP += 2;
-        			break;
-		 	case "C-":GP += 1.7;
-        			break;
-        		case "D+":GP += 1.3;
-        			break;
-        		case "D":GP += 1;
-        			break;
-        		case "D-":GP += 0.7;
-        			break;
-        		default: break;
+	grades2GPA(){
+		var dictionary = {'A+':4.3, 'A':4.0, 'A-':3.7, 'B+':3.3, 'B':3.0, 'B-':2.7, 'C+':2.3, 'C':2.0, 'C-':1.7, 'D+':1.3, 'D':1.0, 'F':0}
+		for(var i = 0; i < this.grades.length; i++){
+			this.gpa += dictionary[this.grades[i]]
+			if ((this.cName[i].substring(0, 2) == "IB" || this.cName[i].substring(0, 2) == "AP") && (this.cName[i].substring(0,15) != "IB Math Studies")) {
+				this.gpa += 0.5;
+			}
+		}
+		this.gpa = this.gpa/this.grades.length;
+	}
+	compareClassandGrades(){
+		var tempcName = [];
+		var tempGrades = [];
+		if(this.cName.length == this.grades.length){
+
+			//push if exist
+			for(var i=0; i < this.cName.length; i++){
+				if(this.grades[i]){
+					tempcName.push(this.cName[i]);
+					tempGrades.push(this.grades[i]);
+				}
+			}
+			this.cName = tempcName;
+			this.grades = tempGrades;
+		}
+		else{
+			throw "cName.length has to be the same length as Grades.length"
 		}
 	}
-
-	for ( i = 0; i < letterGrades.length; i++) {
-		calcGP(letterGrades[i]);
+	calc(){
+		this.getGrades();
+		this.getClassName();
+		this.compareClassandGrades();
+		this.grades2GPA();
+		return this.gpa;
 	}
-
-	GPA = GP / letterGrades.length;
-
-
-	return GPA;
+	showGPA(){
+		var change = document.getElementsByTagName("tbody")[2];
+		change.innerHTML = "<p style='font-family:HelveticaNeue-Light, Helvetica Neue, Helvetica;font-size: 20px;text-align:center;'>(S" + this.semester + ") GPA: " + parseFloat(this.gpa).toFixed(3) +"</p>";
+	}
+	dump_vars(){
+		return([this.grades, this.cName, this.gpa])
+	}
 }
 
-
-if(semester == "S1"){
-	change.innerHTML = "<p style='font-family:HelveticaNeue-Light, Helvetica Neue, Helvetica;font-size: 20px;text-align:center;'>(" + semester + ") GPA: " + parseFloat(calcGPA("S1")).toFixed(3) +"</p>";
-}
-else if(semester == "S2"){
-	var S2GPA = calcGPA("S2");
-	var S1GPA = calcGPA("S1");
-	var averageGPA = (S1GPA + S2GPA)/2;
-	
-	change.innerHTML = "<p style='font-family:HelveticaNeue-Light, Helvetica Neue, Helvetica;font-size: 20px;text-align:center;'>(S2) GPA: " + parseFloat(S2GPA).toFixed(3) + "</p><p style='font-family:HelveticaNeue-Light, Helvetica Neue, Helvetica;font-size: 16px;text-align:center;line-height:20px;'>(S1) GPA: " + parseFloat(S1GPA).toFixed(3) + "&nbsp;&nbsp;  (S1+S2) GPA: " + parseFloat(averageGPA).toFixed(3) +  "</p>";
-
-}
-else{
-	alert("ERROR! INVALID SEMESTER");
-}
-
-
+var GPA = new calcGPA(semester=1,tbodynum=1); //semester use TBD
+GPA.calc();
+GPA.showGPA();
+console.log(GPA.dump_vars())
