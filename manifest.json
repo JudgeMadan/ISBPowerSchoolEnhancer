@@ -5,7 +5,7 @@
 	},
 	"content_scripts": [
 		{
-			"js": ["src/jquery.min.js", "src/gpa.js", "src/schedule/schedule.js"],
+			"js": ["src/jquery.min.js", "src/gpa.js", "src/schedule/schedule.js", "src/ban.js"],
 			"matches": ["http://powerschool.isb.ac.th/guardian/*", "https://powerschool.isb.ac.th/guardian/*"],
 			"run_at": "document_end"
 		}
