@@ -2,7 +2,7 @@ class calcGPA {
 	//this is not a 'proper' class, need to fix on later versions. Need to get this out as soon as possible due to the PS update.
 	constructor(semester, tbodynum){
 		this.semester = semester;
-		this.tbody = document.getElementsByTagName("tbody")[tbodynum].innerHTML.match(/<td align="left">.*<br>.*\n.*\n.*S2.*<\/td>/g);
+		this.tbody = document.getElementsByTagName("tbody")[tbodynum].innerHTML.match(/<td align="left">.*<br>.*\n.*S2.*<\/td>/g);
 		this.grades= [];
 		this.cName = [];
 		this.gpa = 0;
@@ -10,7 +10,7 @@ class calcGPA {
 	getGrades(){
 		//finds grades and makes sure they exist. If they don't then the index is null.
 		for(var i=0; i < this.tbody.length; i++){
-			this.grades[i] = this.tbody[i].match(/S2">.*<\/a>/g)[0].substring(4,6).match(/[ABCDEF][+-]?/g);
+			this.grades[i] = this.tbody[i].match(/S2".*<\/a>/g)[0].substring(17,19).match(/[ABCDEF][+-]?/g);
 			//if they exist, properly format them.
 			if(this.grades[i]){
 				this.grades[i] = this.grades[i][0]
