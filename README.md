@@ -1,5 +1,8 @@
-# ISBPOWERSCHOOLENHANCER
-Enhances ISB's PowerSchool Functionality
+# ISB PowerSchool Enhancer
 
-Chrome Store Link:
-https://chrome.google.com/webstore/detail/fjhngjicagecajjoabcibpjnmlckfjen/
+# Features
+- GPA display (works with IB classes too)
+- Weekly schedule
+
+# Chrome Store Link
+Download it from the Chrome Store [here](https://goo.gl/K1UcBr).
