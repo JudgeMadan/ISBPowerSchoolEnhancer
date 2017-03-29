@@ -1,125 +1,95 @@
-<html>
-	<header>
-		<style>
-			body {
-				font-family: "HelveticaNeue-Light";
-				min-width: 180px;
-			}
-			p {
-				font-size: 20px;
-				text-align: center;
-				margin-bottom: 0px;
-			}
-			div {
-				text-align: center;
-			}
-			div span.title {
-				font-size: 15px;
-			}
-			tr td {
-				font-size: 12.5px;
-			}
-			.head {
-				text-align: center;
-			}
-			.current {
-				outline: solid blue;
-			}
-		</style>
-
-	</header>
-	<body>
-		<p>
-			Enhancing Powerschool
-
-		</p>
-		<div>
-			<br>
-			<span class="title">Changelog:</span>
-			<table border="1">
-				<tr>
-					<td class="head current">Current: 1.3.5</td><td class="current">Fixing PS "Bold" Update</tr>
-				</tr>
-				<tr>
-					<td class="head">1.3.4</td><td>S2 Update</tr>
-				</tr>
-				<tr>
-					<td class="head">1.3.3</td><td>Fix due to PS update</tr>
-				</tr>
-				<tr>
-					<td class="head">1.3.2</td><td>Extension Hotfix</tr>
-				</tr>
-				<tr>
-					<td class="head">1.3.0</td><td>Fixed 2016-2017 GPA Calculation. Rewrote algorithm, made gpa.js more classy.</tr>
-				</tr>
-				<tr>
-					<td class="head">1.2.5</td><td>2016-2017 S1 Update</tr>
-				</tr>
-				<tr>
-					<td class="head">1.2.3</td><td>Fixed GPA calculation issues due to website update.</tr>
-				</tr>
-				<tr>
-					<td class="head">1.2.2</td><td>Reorganized GPA displayed. Fixed minor visual errors.</tr>
-				</tr>
-				<tr>
-					<td class="head">1.2.1</td><td>Fixed GPA calculation in certain one-semester weighted courses. Corrected minor code issues.</tr>
-				</tr>
-				<tr>
-					<td class="head">1.2.0</td><td>Fixed GPA calculation for S2. Now shows S1 GPA and semester GPA.</tr>
-				</tr>
-				<tr>
-					<td class="head">1.1.1</td><td>Updated for S2</tr>
-				</tr>
-				<tr>
-					<td class="head">1.1.0</td><td>Moved schedule to grades page. Styled schedule to make it look better.</tr>
-				</tr>
-				<tr>
-					<td class="head">1.0.0</td><td>Updated extension to work with new PowerSchool. <br>Redesigned GPA calculation, should be faster. <br>Added more PowerSchool styling.</td>
-				</tr>
-				<tr>
-					<td class="head">0.9.8</td><td>Fixed GPA calculation when having an "F"</td>
-				</tr>
-				<tr>
-					<td class="head">0.9.7</td><td>Removed report card styling for upcoming S2 report card.</td>
-				</tr>
-				<tr>
-					<td class="head">0.9.6</td><td>GPA Calculation Hotfix</td>
-				</tr>
-				<tr>
-					<td class="head">0.9.5</td><td>Redesigned GPA calculation algorithm & parsing. Fixes all previous issues with GPA calculation including non integral grades breaking the program.</td>
-				</tr>
-				<tr>
-					<td class="head">0.9.0</td><td>Style PowerSchool home page</td>
-				</tr>
-				<tr>
-					<td class="head">0.8.0</td><td>Fixed non-integral GPA calculation (now rounds to the nearest number).</td>
-				</tr>
-				<tr>
-					<td class="head">0.7.1</td><td>Fixed enhanced schedule problems. Styled login page.</td>
-				</tr>
-				<tr>
-					<td class="head">0.6.0</td><td>Moved GPA back to original place. Made "Enhanced Schedule"</td>
-				</tr>
-				<tr>
-					<td class="head">0.4.1</td><td>Added support for showing S1 &amp; S2 GPA at the same time while in S2. Works on all PowerSchool Guardian pages now. Fixed PowerSchool mispelling.</td>
-				</tr>
-				<tr>
-					<td class="head">0.3.3</td><td>Public Release: Stylized GPA</td>
-				</tr>
-				<tr>
-					<td class="head">0.3.2</td><td>Fixed bug with algorithm that mixes up S1 &amp; 2 GPA</td>
-				</tr>
-				<tr>
-					<td class="head">0.3.1</td><td>Fixed bug that makes 100% grade considered 0%</td>
-				</tr>
-				<tr>
-					<td class="head">0.3.0</td><td>Developed new algorithm using hsgrades.html</td>
-				</tr>
-				<tr>
-					<td class="head">0.1.0</td><td>Public Beta Release</td>
-				</tr>
-
-			</table>
-		</div>
-	</body>
-</html>
+<header>
+    <style>body{font-family:Roboto;min-width:180px}div{text-align:center}tr td{font-size:12.5px}.head{text-align:center}.current{border:solid}</style>
+    <style>table{border-collapse:collapse}td{line-height:150%;padding:4;border:1px solid #000}</style>
+</header>
+<h1 align=center>PowerSchool Enhancer Changelog</h1>
+<h3 align=center>Created by Judge Madan and Ben Siraphob</h3>
+<h4 align=center>Source avaliable on <a href=https://goo.gl/1rDaV9>GitHub</a>.</h4>
+<div>
+    <table cellspacing=2>
+        <tr>
+            <td class="head current">1.3.6
+                <td class=current>Code cleanups & optimizations.
+                    <tr>
+                    <td class=head>1.3.5
+                    <td>Fixing PS "Bold" Update.
+                    <tr>
+                    <td class=head>1.3.4
+                    <td>S2 Update.
+                    <tr>
+                    <td class=head>1.3.3
+                    <td>Fix due to PS update.
+                    <tr>
+                    <td class=head>1.3.2
+                    <td>Extension hotfix.
+                    <tr>
+                    <td class=head>1.3.0
+                    <td>Fixed 2016-2017 GPA Calculation. Rewrote algorithm, made gpa.js more classy.
+                    <tr>
+                    <td class=head>1.2.5
+                    <td>2016-2017 S1 Update.
+                    <tr>
+                    <td class=head>1.2.3
+                    <td>Fixed GPA calculation issues due to website update.
+                    <tr>
+                    <td class=head>1.2.2
+                    <td>Reorganized GPA display. Fixed minor visual errors.
+                    <tr>
+                    <td class=head>1.2.1
+                    <td>Fixed GPA calculation in certain one-semester weighted courses. Corrected minor code issues.
+                    <tr>
+                    <td class=head>1.2.0
+                    <td>Fixed GPA calculation for S2. Now shows S1 GPA and semester GPA.
+                    <tr>
+                    <td class=head>1.1.1
+                    <td>Updated for S2
+                    <tr>
+                    <td class=head>1.1.0
+                    <td>Moved schedule to grades page. Styled schedule to make it look better.
+                    <tr>
+                    <td class=head>1.0.0
+                    <td>Updated extension to work with new PowerSchool.<br>Redesigned GPA calculation, should be faster.<br>Added more PowerSchool styling.
+                    <tr>
+                    <td class=head>0.9.8
+                    <td>Fixed GPA calculation when having an "F".
+                    <tr>
+                    <td class=head>0.9.7
+                    <td>Removed report card styling for upcoming S2 report card.
+                    <tr>
+                    <td class=head>0.9.6
+                    <td>GPA Calculation hotfix.
+                    <tr>
+                    <td class=head>0.9.5
+                    <td>Redesigned GPA calculation algorithm & parsing. Fixes all previous issues with GPA calculation including non-integral grades breaking the program.
+                    <tr>
+                    <td class=head>0.9.0
+                    <td>Styled PowerSchool home page.
+                    <tr>
+                    <td class=head>0.8.0
+                    <td>Fixed non-integral GPA, now rounds to the nearest number.
+                    <tr>
+                    <td class=head>0.7.1
+                    <td>Fixed enhanced schedule problems. Styled login page.
+                    <tr>
+                    <td class=head>0.6.0
+                    <td>Moved GPA back to original place. Addition of Enhanced Schedule.
+                    <tr>
+                    <td class=head>0.4.1
+                    <td>Added support for showing S1 & S2 GPA at the same time while in S2. Works on all PowerSchool Guardian pages now. Fixed PowerSchool mispelling.
+                    <tr>
+                    <td class=head>0.3.3
+                    <td>Public Release: Stylized GPA.
+                    <tr>
+                    <td class=head>0.3.2
+                    <td>Fixed bug with algorithm that mixes up S1 &' 2 GPA
+                    <tr>
+                    <td class=head>0.3.1
+                    <td>Fixed bug that made 100% grade look like 0%.
+                    <tr>
+                    <td class=head>0.3.0
+                    <td>Developed new algorithm using hsgrades.html
+                    <tr>
+                    <td class=head>0.1.0
+                    <td>Public Beta Release
+                    </table>
+                    </div>
