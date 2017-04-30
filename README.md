@@ -7,6 +7,8 @@
 ## Chrome Store Link (Recommended)
 Download the extension from the Chrome Store [here](https://goo.gl/K1UcBr).
 
+
+
 ## Building from Source (Advanced)
 **Note:** Building from source is not recommended unless you want to propose changes to the repository. Also Chrome will annoy you.
 
