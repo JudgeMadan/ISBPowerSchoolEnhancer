@@ -1,13 +1,13 @@
 # ISB PowerSchool Enhancer
 
-# Features
+## Features
 - GPA display (works with IB classes)
 - Weekly schedule
 
-# Chrome Store Link (Recommended)
+## Chrome Store Link (Recommended)
 Download the extension from the Chrome Store [here](https://goo.gl/K1UcBr).
 
-# Building from Source (Advanced)
+## Building from Source (Advanced)
 **Note:** Building from source is not recommended unless you want to propose changes to the repository. Also Chrome will annoy you.
 
 1. Download the repository as a .zip and decompress.
