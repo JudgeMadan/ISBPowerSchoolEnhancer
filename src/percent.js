@@ -10,7 +10,7 @@ jQuery.get("termgrades.html", function(data) {
   }
 
   //create string
-  var toReturn = "<p style='font-family:HelveticaNeue-Light, Helvetica Neue, Helvetica;font-size: 20px; padding-top:10px; text-align:center;'>Percentages (Beta):</p> <br> <table style='margin-left:0; width:100%'>"
+  var toReturn = "<p style='font-family:HelveticaNeue-Light, Helvetica Neue, Helvetica;font-size: 20px; padding-top:10px; text-align:center;'><strong>Percentages (Beta)</strong></p> <br> <table style='margin-left:0; width:100%'>"
 
   for(var i=0; i < names.length; i++){
     toReturn+="<tr>"
