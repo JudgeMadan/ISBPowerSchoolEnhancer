@@ -63,7 +63,7 @@ class calcGPA {
 	showGPA(){
 		var change = document.getElementsByTagName("tbody")[2];
 		var error_report = "<p style='font-family:Times New Roman; text-align:center; font-size:11px; margin-top:-10px;'>Report GPA Calculation Error</p>"
-		var gpa_display = "<p style='font-family:HelveticaNeue-Light, Helvetica Neue, Helvetica;font-size: 20px;text-align:center;'>(S" + this.semester + ") GPA: " + parseFloat(this.gpa).toFixed(3) +"</p>";
+		var gpa_display = "<p style='font-family:HelveticaNeue-Light, Helvetica Neue, Helvetica;font-size: 20px;text-align:center; margin-bottom:-5px;'>(S" + this.semester + ") GPA: " + parseFloat(this.gpa).toFixed(3) +"<br><sup style='font-size:11px'>Scroll Down for Percentages</sup></p>";
 		change.innerHTML = gpa_display;
 	}
 	dump_vars(){
