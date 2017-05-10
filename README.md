@@ -4,7 +4,7 @@
 - GPA display (works with IB classes)
 - Weekly schedule
 
-## Chrome Store Link (Recommended)
+## Install from Chrome Store (Recommended)
 Download the extension from the Chrome Store [here](https://goo.gl/K1UcBr).
 
 ## Building from Source (Advanced)
