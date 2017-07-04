@@ -14,8 +14,9 @@ jQuery.get("myschedule.html", function(data) {
 		schedx = "<a id='d'></a>".concat(schedx);
 
 		//replace contents with schedule and apply css
-		var tables = document.getElementsByTagName("table")[3];
-		tables.innerHTML = schedx;
+		var tables = document.getElementById("nav-secondary")
+		// var tables = document.getElementsByTagName("table")[3];
+		tables.innerHTML = "<br><p style='text-align:center; font-size:20px'>Schedule View (Beta)</p> <br> " + schedx;
 		tables.className = "gridSched";
 
 		//get scheduleBreak classes and apply black styling
