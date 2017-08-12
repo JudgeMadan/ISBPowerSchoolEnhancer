@@ -10,13 +10,12 @@ jQuery.get("myschedule.html", function(data) {
 	if (scheddata.indexOf("Student and Parent Sign In") == -1 && (window.location == "https://powerschool.isb.ac.th/guardian/home.html" || window.location == "http://powerschool.isb.ac.th/guardian/home.html" || window.location == "https://powerschool.isb.ac.th/guardian/home.html#d" || window.location == "http://powerschool.isb.ac.th/guardian/home.html#d")) {
 
 		//grab table, and adds anchor for link.
-		var schedx = scheddata.match(/<table[^]*<\/table>/g)[0];
-		schedx = "<a id='d'></a>".concat(schedx);
+		var schedx = scheddata.match(/<table[^]*<\/table>[^]*<!-- end student content -->/g)[0];		schedx = "<a id='d'></a>".concat(schedx);
 
 		//replace contents with schedule and apply css
-		var tables = document.getElementById("nav-secondary")
-		// var tables = document.getElementsByTagName("table")[3];
-		tables.innerHTML = "<br><p style='text-align:center; font-size:20px'>Schedule View (Beta)</p> <br> " + schedx;
+		// var tables = document.getElementById("nav-secondary")
+		var tables = document.getElementsByTagName("table")[3];
+		tables.innerHTML = schedx;
 		tables.className = "gridSched";
 
 		//get scheduleBreak classes and apply black styling
