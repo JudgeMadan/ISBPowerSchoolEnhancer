@@ -1,53 +1,49 @@
-var getGPA = function () {
-    var dataTable=Array.prototype.slice.call(document.getElementsByClassName("linkDescList grid"))
+Object.defineProperty(Array.prototype, "chunk", {value:function(chunkSize) {
+  var array = this;
+  return [].concat.apply([], array.map(function(elem, i) {
+    return i % chunkSize ? [] : [array.slice(i, i + chunkSize)];
+  }));
+}});
 
-    var dataArray = [];
-
-// Convert table to array
-$(dataTable).each(function() {
+var getGPA = function() {
+  var dataTable = Array.prototype.slice.call(document.getElementsByClassName("linkDescList grid"));
+  var dataArray = [];
+  $(dataTable).each(function() {
     var arrayOfThisRow = [];
-    var tableData = $(this).find('td');
+    var tableData = $(this).find("td");
     if (tableData.length > 0) {
-        tableData.each(function() { arrayOfThisRow.push($(this).text()); });
-        dataArray.push(arrayOfThisRow);
+      tableData.each(function() {
+        arrayOfThisRow.push($(this).text());
+      });
+      dataArray.push(arrayOfThisRow);
     }
-});
+  });
 
-Object.defineProperty(Array.prototype, 'chunk', {
-    value: function(chunkSize) {
-        var array=this;
-        return [].concat.apply([],
-            array.map(function(elem,i) {
-                return i%chunkSize ? [] : [array.slice(i,i+chunkSize)];
-            })
-            );
+  dataArray = dataArray[0].chunk(16);
+  console.log(dataArray);
+  console.log("Number of rows: " + dataArray.length);
+  var numclasses = 0;
+  var gpa2 = 0;
+  for (var i = 0; !isNaN(parseInt(dataArray[i][12][0])); i++, numclasses++) {}
+
+  var dictionary = {7:4.3, 6:4, 5:3.3, 4:2.3, 3:1.3, 2:0, 1:0};
+  console.log("Number of classes: " + numclasses);
+  for (var gpa = 0, i = 0, current = 0; i < numclasses; i++) {
+    current = parseInt(dataArray[i][12][0]);
+    gpa2 += dictionary[current];
+    if ((dataArray[i][11].substring(0, 2) == "IB" || dataArray[i][11].substring(0, 2) == "AP") && dataArray[i][11].substring(0, 15) != "IB Math Studies") {
+      gpa2 += 0.5;
     }
-});
-dataArray=dataArray[0].chunk(16)
+    gpa += current;
+  }
 
-console.log(dataArray);
-console.log("Number of rows: "+dataArray.length)
+  return [gpa / numclasses, gpa2 / numclasses];
+};
 
-
-var numclasses = 0;
-for (var i=0;
-    !(isNaN(parseInt(dataArray[i][12][0])));
-    i++,numclasses++){}
-
-    console.log("Number of classes: "+numclasses)
-
-for (var gpa = 0, i = 0; numclasses > i; i++) {
-    gpa += parseInt(dataArray[i][12][0]);
-}
-
-return gpa / numclasses;
-}
-
-var main = function ()
-{
-    var change = document.getElementsByTagName("tbody")[2];
-    var gpa_display = "<p style='font-family:HelveticaNeue-Light, Helvetica Neue, Helvetica;font-size: 20px;text-align:center; margin-bottom:-5px;'>(S1) GPA: " + getGPA().toFixed(3)+"<br></p>";
-    change.innerHTML = gpa_display;
-}
+var main = function() {
+  var change = document.getElementsByTagName("tbody")[2];
+  var GPAs = getGPA();
+  var gpa_display = "<p style='font-family:HelveticaNeue-Light, Helvetica Neue, Helvetica;font-size: 20px;text-align:center; margin-bottom:-5px;'>(S1) GPA: " + GPAs[0].toFixed(3) + "<br> Traditional GPA: " + GPAs[1].toFixed(3) + "</p>";
+  change.innerHTML = gpa_display;
+};
 main();
-
