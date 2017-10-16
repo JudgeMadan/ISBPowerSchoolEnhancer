@@ -57,7 +57,7 @@ var main = function() {
   disp.appendChild(document.createElement("br"));
   disp.appendChild(document.createTextNode(gpa_display2));
 
-  document.getElementsByTagName("tbody")[2].appendChild(disp);
+  change.appendChild(disp);
 
 };
 main();
