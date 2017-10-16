@@ -43,7 +43,21 @@ var getGPA = function() {
 var main = function() {
   var change = document.getElementsByTagName("tbody")[2];
   var GPAs = getGPA();
-  var gpa_display = "<p style='font-family:HelveticaNeue-Light, Helvetica Neue, Helvetica;font-size: 20px;text-align:center; margin-bottom:-5px;'>(S1) GPA: " + GPAs[0].toFixed(3) + "<br> Traditional GPA: " + GPAs[1].toFixed(3) + "</p>";
-  change.innerHTML = gpa_display;
+  var gpa_display = "(S1) GPA: " + GPAs[0].toFixed(3);
+  var gpa_display2 = "Traditional GPA: " + GPAs[1].toFixed(3);
+
+  var disp = document.createElement("P");                       // Create a <p> element
+
+  disp.style.fontSize = "20px";
+  disp.style.fontFamily = "Helvetica Neue";
+  disp.style.textAlign = "center";
+  disp.style.marginBottom =  "-5px";
+
+  disp.appendChild(document.createTextNode(gpa_display));
+  disp.appendChild(document.createElement("br"));
+  disp.appendChild(document.createTextNode(gpa_display2));
+
+  document.getElementsByTagName("tbody")[2].appendChild(disp);
+
 };
 main();
