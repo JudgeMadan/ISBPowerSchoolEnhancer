@@ -1,6 +1,7 @@
-var dataTable=Array.prototype.slice.call(document.getElementsByClassName("linkDescList grid"))
+var getGPA = function () {
+    var dataTable=Array.prototype.slice.call(document.getElementsByClassName("linkDescList grid"))
 
-var dataArray = [];
+    var dataArray = [];
 
 // Convert table to array
 $(dataTable).each(function() {
@@ -19,7 +20,7 @@ Object.defineProperty(Array.prototype, 'chunk', {
             array.map(function(elem,i) {
                 return i%chunkSize ? [] : [array.slice(i,i+chunkSize)];
             })
-        );
+            );
     }
 });
 dataArray=dataArray[0].chunk(16)
@@ -30,19 +31,23 @@ console.log("Number of rows: "+dataArray.length)
 
 var numclasses = 0;
 for (var i=0;
-!(isNaN(parseInt(dataArray[i][12][0])));
-i++,numclasses++){}
+    !(isNaN(parseInt(dataArray[i][12][0])));
+    i++,numclasses++){}
 
-console.log("Number of classes: "+numclasses)
+    console.log("Number of classes: "+numclasses)
 
 for (var gpa = 0, i = 0; numclasses > i; i++) {
-  gpa += parseInt(dataArray[i][12][0]);
+    gpa += parseInt(dataArray[i][12][0]);
 }
 
-gpa /= numclasses;
+return gpa / numclasses;
+}
 
-
-var change = document.getElementsByTagName("tbody")[2];
-var gpa_display = "<p style='font-family:HelveticaNeue-Light, Helvetica Neue, Helvetica;font-size: 20px;text-align:center; margin-bottom:-5px;'>(S1) GPA: " + gpa.toFixed(3)+"<br></p>";
-change.innerHTML = gpa_display;
+var main = function ()
+{
+    var change = document.getElementsByTagName("tbody")[2];
+    var gpa_display = "<p style='font-family:HelveticaNeue-Light, Helvetica Neue, Helvetica;font-size: 20px;text-align:center; margin-bottom:-5px;'>(S1) GPA: " + getGPA().toFixed(3)+"<br></p>";
+    change.innerHTML = gpa_display;
+}
+main();
 
