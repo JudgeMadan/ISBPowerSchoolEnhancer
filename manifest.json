@@ -6,7 +6,7 @@
 	"content_scripts": [
 		{
 			"js": ["src/jquery.min.js", "src/gpa.js", "src/schedule/schedule.js"],
-			"matches": ["http://powerschool.isb.ac.th/guardian/*", "https://powerschool.isb.ac.th/guardian/*"],
+			"matches": ["https://powerschool.isb.ac.th/guardian/*"],
 			"run_at": "document_end"
 		}
 	],
@@ -18,8 +18,8 @@
 	},
 	"manifest_version": 2,
 	"name": "ISB PowerSchool Enhancer",
-	"permissions": ["https://*/*", "http://*/*"],
+	"permissions": ["https://powerschool.isb.ac.th/guardian/*"],
 	"short_name": "ISBPWRSKLENH",
-	"version": "1.4.1",
+	"version": "1.4.3",
 	"web_accessible_resources": ["src/schedule/schedule.css"]
 }
