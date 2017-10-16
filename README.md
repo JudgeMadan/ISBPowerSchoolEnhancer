@@ -1,15 +1,16 @@
 # ISB PowerSchool Enhancer
 
 ## Features
-- GPA display (works with IB classes)
+- GPA display (updated for 1-7 scale)
 - Weekly schedule
 
 ## Install from Chrome Store (Recommended)
 Download the extension from the Chrome Store [here](https://goo.gl/K1UcBr).
 
-## Building from Source (Advanced)
-**Note:** Building from source is not recommended unless you want to propose changes to the repository. Also Chrome will annoy you.
+## Installing as an Unpacked Extension 
+**Note:** Only do this if you want to help develop this extension!
 
-1. Download the repository as a .zip and decompress.
+1. Download the repository.
 2. Go to chrome://extensions/ and check "Developer Mode".
-3. Click [Pack Extension...] and navigate to the decompressed folder.
+3. Click [Load unpacked extension...] and navigate to the repository's folder.
+4. Make changes and reload the extension as needed.
