@@ -1,5 +1,5 @@
 // Turns an array into an array of sub-arrays with a specified length
-// from https://stackoverflow.com/questions/8495687/split-array-into-chunks#8495740
+// from https://stackoverflow.com/a/10456644
 Object.defineProperty(Array.prototype, 'chunk', {
   value: function(chunkSize) {
     var R = [];
