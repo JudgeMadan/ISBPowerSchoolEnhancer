@@ -1,9 +1,13 @@
-Object.defineProperty(Array.prototype, "chunk", {value:function(chunkSize) {
-  var array = this;
-  return [].concat.apply([], array.map(function(elem, i) {
-    return i % chunkSize ? [] : [array.slice(i, i + chunkSize)];
-  }));
-}});
+// Turns an array into an array of sub-arrays with a specified length
+// from https://stackoverflow.com/questions/8495687/split-array-into-chunks#8495740
+Object.defineProperty(Array.prototype, 'chunk', {
+  value: function(chunkSize) {
+    var R = [];
+    for (var i=0; i<this.length; i+=chunkSize)
+      R.push(this.slice(i,i+chunkSize));
+    return R;
+  }
+});
 
 var getGPA = function() {
   var dataTable = Array.prototype.slice.call(document.getElementsByClassName("linkDescList grid"));
@@ -41,12 +45,14 @@ var getGPA = function() {
 };
 
 var main = function() {
+    // Element of webpage to change
   var change = document.getElementsByTagName("tbody")[2];
   var GPAs = getGPA();
   var gpa_display = "(S1) GPA: " + GPAs[0].toFixed(3);
   var gpa_display2 = "Traditional GPA: " + GPAs[1].toFixed(3);
 
-  var disp = document.createElement("P");                       // Create a <p> element
+  // Create a <P> block with the text
+  var disp = document.createElement("P");
 
   disp.style.fontSize = "20px";
   disp.style.fontFamily = "Helvetica Neue";
@@ -54,7 +60,7 @@ var main = function() {
   disp.style.marginBottom =  "-5px";
 
   disp.appendChild(document.createTextNode(gpa_display));
-  disp.appendChild(document.createElement("br"));
+  disp.appendChild(document.createElement("br")); // line break
   disp.appendChild(document.createTextNode(gpa_display2));
 
   change.appendChild(disp);
