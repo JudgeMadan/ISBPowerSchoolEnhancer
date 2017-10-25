@@ -1,14 +1,13 @@
 var getGPAs = function () {
   // Turns an array into an array of sub-arrays with a specified length
-  // from https://stackoverflow.com/a/10456644
-  Object.defineProperty(Array.prototype, 'chunk', {
-    value: function (chunkSize) {
-      var array = this;
-      return [].concat.apply([], array.map(function (elem, i) {
-        return i % chunkSize ? [] : [array.slice(i, i + chunkSize)];
-      }));
+  // from https://stackoverflow.com/a/11764168
+  function chunk(arr, len) {
+    var chunks = [], i = 0, n = arr.length;
+    while (i < n) {
+      chunks.push(arr.slice(i, i += len));
     }
-  });
+    return chunks;
+  }
   
   // Convert table to array without jQuery
   // from https://stackoverflow.com/a/34349561
@@ -38,7 +37,7 @@ var getGPAs = function () {
 
   for (var gpa = 0, i = 0; i < dataArray.length; i++) {
     var gradeData = dataArray[i][12];
-    var current = gradeData.match(/<a\s+href="[\S\s]*?">[\S\s]*?<\/a>/gi);
+    var current = gradeData.match(/<a\s+href="[^>]*?">[^>]*?<\/a>/gi);
     if (current === null) {
       break;
     }
