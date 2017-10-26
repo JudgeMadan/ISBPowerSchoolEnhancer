@@ -63,7 +63,7 @@ var main = function () {
   // Create a <p> block with the text
   var disp = document.createElement('p');
   disp.style.fontSize = '20px';
-  disp.style.fontFamily = 'Roboto';
+  disp.style.fontFamily = 'Helvetica';
   disp.style.textAlign = 'center';
   disp.style.marginBottom = '-5px';
 
