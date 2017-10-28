@@ -38,7 +38,7 @@ var getGPAs = function () {
   for (var gpa = 0, i = 0; i < dataArray.length; i++) {
     var gradeData = dataArray[i][12];
     var current = gradeData.match(/<a\s+href="[^>]*?">[^>]*?<\/a>/gi);
-    if (current === null) {
+    if (current == null) {
       break;
     }
     var current = parseInt(current[0].replace(/(<\/?[^>]+>)/gi, ''));
