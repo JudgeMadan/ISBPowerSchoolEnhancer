@@ -4,13 +4,12 @@
 - GPA display (updated for 1-7 scale)
 - Weekly schedule
 
-## Install from Chrome Store (Recommended)
-Download the extension from the Chrome Store [here](https://goo.gl/K1UcBr).
+## Install
 
-## Installing as an Unpacked Extension 
-**Note:** Only do this if you want to help develop this extension!
+### Chrome Store
 
-1. Download the repository.
-2. Go to chrome://extensions/ and check "Developer Mode".
-3. Click [Load unpacked extension...] and navigate to the repository's folder.
-4. Make changes and reload the extension as needed.
+Download the extension from the Chrome Web Store [here](https://chrome.google.com/webstore/detail/isb-powerschool-enhancer/fjhngjicagecajjoabcibpjnmlckfjen).
+
+### Mozilla Add-ons
+
+Download the extension from the Mozilla Add-ons store [here](https://addons.mozilla.org/en-US/firefox/addon/isb-powerschool-enhancer/?src=api).
