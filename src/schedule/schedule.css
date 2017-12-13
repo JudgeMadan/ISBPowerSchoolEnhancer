@@ -6,7 +6,6 @@ views.
 */
 .gridSched {
     border-collapse: collapse;
-    background-image: url("table-back-stripes.png");
 }
 
 .gridSched th,

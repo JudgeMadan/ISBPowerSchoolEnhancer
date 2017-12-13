@@ -8,7 +8,7 @@ var getGPAs = function () {
     }
     return chunks;
   }
-  
+
   // Convert table to array without jQuery
   // from https://stackoverflow.com/a/34349561
   var dataArray = Array.prototype.map.call(document.getElementsByClassName('linkDescList grid'),
@@ -17,7 +17,7 @@ var getGPAs = function () {
     });
   });
 
-  dataArray = dataArray[0].chunk(16);
+  dataArray = chunk(dataArray[0], 16);
 
   console.log(dataArray);
   console.log('Number of rows: ' + dataArray.length);
