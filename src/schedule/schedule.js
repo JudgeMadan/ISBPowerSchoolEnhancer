@@ -28,20 +28,20 @@ var homepage = 'https://powerschool.isb.ac.th/guardian/home.html';
 
 client.get('https://powerschool.isb.ac.th/guardian/myschedule.html', function (scheddata) {
 
-	// Check if request yielded a login instead of a sign in page.
+  // Check if request yielded a login instead of a sign in page.
   if (scheddata.indexOf('Student and Parent Sign In') == - 1
-	&& (window.location == homepage || window.location == (homepage + '#d'))) {
+  && (window.location == homepage || window.location == (homepage + '#d'))) {
 
-		// Grab table, add anchor for link.
+    // Grab table, add anchor for link.
     var schedx = scheddata.match(/<table[^]*<\/table>[^]*<!-- end student content -->/g) [0];
     schedx = '<a id=\'d\'></a>' + schedx;
 
-		// Replace contents with schedule and apply CSS.
+    // Replace contents with schedule and apply CSS.
     var tables = document.getElementsByTagName('table') [3];
     tables.innerHTML = schedx;
     tables.className = 'gridSched';
 
-		// Get scheduleBreak classes and apply black styling.
+    // Get scheduleBreak classes and apply black styling.
     var schedBlack = document.getElementsByClassName('scheduleBreak');
     while (schedBlack.length != 0) {
       schedBlack[0].className = 'scheduleBreakTick';
